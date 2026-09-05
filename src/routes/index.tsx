@@ -552,7 +552,7 @@ function Index() {
                 );
               })}
             </div>
-            <div className="console-panel scanlines rounded-sm p-6 sm:p-10">
+            <div className="console-panel scanlines self-start rounded-sm p-6 sm:p-10">
               <p className="label-mono">{current.label}</p>
               <ul className="mt-6 flex flex-wrap gap-3">
                 {current.items.map((item) => (
