@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import photo from "@/assets/profile-photo.jpg.asset.json";
+const photo = "/profile-photo.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -474,7 +474,7 @@ function Index() {
             <div className="trace-in relative mx-auto w-full max-w-xs lg:mx-0">
               <div className="signal-ring scanlines overflow-hidden rounded-sm border border-border bg-surface">
                 <img
-                  src={photo.url}
+                  src={photo}
                   alt="Portrait of Lakshya Agarwal"
                   width={932}
                   height={1014}
