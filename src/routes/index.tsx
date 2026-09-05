@@ -235,8 +235,8 @@ function useInView<T extends HTMLElement>() {
     const node = ref.current;
     if (!node) return;
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
           setSeen(true);
           observer.disconnect();
         }
@@ -395,8 +395,8 @@ function ProjectCard({ project }: { project: Project }) {
 /* ------------------------------------------------------------------ page */
 
 function Index() {
-  const [activeStack, setActiveStack] = useState(STACK[0].key);
-  const current = STACK.find((s) => s.key === activeStack) ?? STACK[0];
+  const [activeStack, setActiveStack] = useState(STACK[0]!.key);
+  const current = STACK.find((s) => s.key === activeStack) ?? STACK[0]!;
 
   return (
     <div className="blueprint min-h-screen">
